@@ -1,0 +1,29 @@
+<h2>User List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>EmailID</th>
+            <th>Username</th>
+            <th>LockStatus</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.accountNonLocked}}</td>
+            <td>
+                <button (click)="updateUser(user.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteUser(user.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                <button (click)="userDetails(user.id)" class="btn btn-success" style="margin-left: 10px">View</button>
+                <button (click)="lockUser(user.id)" class="btn btn-primary" style="margin-left: 10px">Lock</button>
+                <button (click)="unlockUser(user.id)" class="btn btn-warning" style="margin-left: 10px">UnLock</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
